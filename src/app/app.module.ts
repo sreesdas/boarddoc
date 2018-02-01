@@ -8,16 +8,27 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { AgendaPage } from '../pages/agenda/agenda';
+import { CommitteePage } from '../pages/committee/committee';
+import { UsersPage } from '../pages/users/users';
+import { LoginPage } from '../pages/login/login';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { ComponentsEventComponent } from '../components/components-event/components-event';
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
+    AgendaPage,
+    CommitteePage,
+    UsersPage,
     ContactPage,
+    LoginPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ComponentsEventComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +38,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     AboutPage,
+    AgendaPage,
+    CommitteePage,
+    LoginPage,
+    UsersPage,
     ContactPage,
     HomePage,
     TabsPage

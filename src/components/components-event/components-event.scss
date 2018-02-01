@@ -1,0 +1,26 @@
+components-event {
+
+  .event-date {
+    padding-top: 10px;
+    text-align: center;
+    margin-left: -10px;
+
+    h3 {
+      margin: 0px;
+    }
+    p {
+      margin: 0px;
+    }
+  }
+
+  .event-details {
+    padding: 10px;
+    margin: 0px 0px 15px 0px;
+    width: 100%;
+    color: white;
+
+    .event-time {
+      float: right;
+    }
+  }
+}

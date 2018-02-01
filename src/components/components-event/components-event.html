@@ -1,0 +1,23 @@
+<ion-grid>
+<ion-row>
+  <ion-col col-2>
+  </ion-col>
+  <ion-col col-10>
+    {{event.week}}
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-2>
+    <div class="event-date">
+      <h3>{{parsedDate.date}}</h3>
+      <p>{{parsedDate.day}}</p>
+    </div>
+  </ion-col>
+  <ion-col col-10>
+    <ion-card class="event-details" *ngFor="let each of event.agendas" [ngStyle]="{'background':each.color}" >
+      {{each.heading}}
+      <span class="event-time"> {{each.time}} </span>
+   </ion-card>
+  </ion-col>
+</ion-row>
+</ion-grid>

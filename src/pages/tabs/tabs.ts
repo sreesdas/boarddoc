@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import { NavParams } from 'ionic-angular';
+import { AgendaPage } from '../agenda/agenda';
+import { CommitteePage } from '../committee/committee';
 import { HomePage } from '../home/home';
 
 @Component({
@@ -9,11 +9,12 @@ import { HomePage } from '../home/home';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  tab1Root = CommitteePage;
+  tab2Root = { title: 'Dashboard', component: HomePage };
+  tab3Root = AgendaPage;
 
-  constructor() {
-
+  constructor(private navParams: NavParams) {
+    if(navParams.get('page'))
+      this.tab2Root = this.navParams.get('page');
   }
 }
