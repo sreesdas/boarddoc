@@ -1,13 +1,14 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar color="primary">
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-content>
+    <div class="sidebar-header" >
+      <img class="sidebar-avatar" src="assets/imgs/sree.jpg" />
+      <p class="sidebar-name" >Sreenath S Das</p>
+      <p class="sidebar-email" >Das_Sreenath@ongc.co.in</p>
+    </div>
     <ion-list>
-      <button icon-left menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}}
+      <button class="sidebar-button" icon-left menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}"></ion-icon> 
+        {{p.title}}
       </button>
     </ion-list>
   </ion-content>

@@ -16,5 +16,28 @@
 </ion-header>
 
 <ion-content padding>
-  <button *ngFor="let each of committees" ion-button block>{{each}}</button>
+
+  <ion-list>
+    <ion-item *ngFor="let each of committees">
+      <h2>{{each.name}}</h2>
+      <p>Committee Owner : {{each.description}}</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button class="fab-with-label" ion-fab>
+        <ion-icon name="create"></ion-icon>
+        <ion-label>Edit Details</ion-label>
+      </button>
+      <button class="fab-with-label" ion-fab>
+        <ion-icon name="person-add" ></ion-icon>
+        <ion-label>Add Members</ion-label>
+      </button>
+    </ion-fab-list>
+</ion-fab>
+
+
 </ion-content>
