@@ -1,0 +1,47 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{committeeName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="heading-tag">Members</div>
+
+  <ion-list *ngFor="let member of members">
+    <ion-item-sliding>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/{{member.img}}">
+        </ion-avatar>
+        <h2>{{member.name}}</h2>
+        <ion-badge *ngIf="member.isChairman" item-end>chairman</ion-badge>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removeMember(member)">
+          <ion-icon name="trash"></ion-icon>
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button class="fab-with-label" ion-fab>
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Add Agenda</ion-label>
+      </button>
+      <button class="fab-with-label" ion-fab>
+        <ion-icon name="person-add" ></ion-icon>
+        <ion-label>Add Users</ion-label>
+      </button>
+      <button class="fab-with-label" ion-fab>
+        <ion-icon name="create" ></ion-icon>
+        <ion-label>Modify Committee</ion-label>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

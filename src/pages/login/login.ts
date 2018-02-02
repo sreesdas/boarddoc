@@ -10,6 +10,9 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  username='';
+  password='';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -19,5 +22,14 @@ export class LoginPage {
 
   buttonClicked() {
     this.navCtrl.setRoot(TabsPage);
+  }
+
+  login(){
+    if(this.username == 'admin' && this.password== 'admin'){
+      this.navCtrl.setRoot(TabsPage);
+    }
+    else {
+      alert('Wrong Credentials');
+    }
   }
 }

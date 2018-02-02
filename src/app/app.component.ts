@@ -7,6 +7,9 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UsersPage } from '../pages/users/users';
+import { NoticePage } from '../pages/notice/notice';
+import { MomPage } from '../pages/mom/mom';
+import { CircularPage } from '../pages/circular/circular';
 
 @Component({
   templateUrl: 'app.html'
@@ -21,13 +24,12 @@ export class MyApp {
 
     this.pages = [
       { title: 'DashBoard', component: HomePage, icon: 'home' },
-      { title: 'Committee', component: TabsPage, icon: 'briefcase' },
       { title: 'Agenda', component: TabsPage, icon: 'calendar'},
-      { title: 'MOM', component: UsersPage, icon: 'create'},
-      { title: 'Circular', component: UsersPage, icon: 'document'},
-      { title: 'Notice', component: UsersPage, icon: 'paper'},
+      { title: 'MOM', component: MomPage, icon: 'create'},
+      { title: 'Circular', component: CircularPage, icon: 'document'},
+      { title: 'Notice', component: NoticePage, icon: 'paper'},
       { title: 'Users', component: UsersPage, icon: 'people'},
-      { title: 'Logout', component: UsersPage, icon: 'power'}
+      { title: 'Logout', component: LoginPage, icon: 'power'}
     ];
 
     platform.ready().then(() => {
@@ -39,6 +41,6 @@ export class MyApp {
   }
 
   openPage(nav){
-    nav.title == "Login" ? this.nav.setRoot(LoginPage, {page: nav}) : this.nav.setRoot(TabsPage, {page: nav});
+    nav.title == "Logout" ? this.nav.setRoot(LoginPage, {page: nav}) : this.nav.setRoot(TabsPage, {page: nav});
   }
 }

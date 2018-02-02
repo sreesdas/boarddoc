@@ -7,6 +7,27 @@
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button block (click)="buttonClicked()">Login</button>
+<ion-content class="background">
+	<ion-card>
+		<ion-card-header>
+			ONGC BoardDoc
+		</ion-card-header>
+		<ion-card-content>
+			<ion-list no-line>
+				<ion-item>
+          <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+				</ion-item>
+				<a>Forgot your login detail? <a href="tel:+8259950403">Get help signing in</a></a>
+				<button ion-button block outline color="light" (click)="login()" >Log in</button>
+				<p>OR</p>
+				<button ion-button block color="light">
+					<ion-icon name="logo-google"></ion-icon> Login with Google
+				</button>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+	<button class="bottom" ion-button clear full color="light">Don't have an account? Sign up</button>
 </ion-content>

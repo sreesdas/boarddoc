@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ActionSheetController } from 'ionic-angular';
 
-/**
- * Generated class for the CommitteePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ViewCommitteePage } from '../view-committee/view-committee';
 
 @IonicPage()
 @Component({
@@ -17,13 +13,14 @@ export class CommitteePage {
 
 //  committees = ['ONGC-Executive Commi Meeting','ONGC-Board Meeting','ONGC-Executive Meeting', 'ONGC-Testing Meeting', 'ONGC-corporate infocom Meeting'];
 
-  committees = [{ name: 'Committee1', hidden: true, description: 'Something'},
-  				{ name: 'Committee2', hidden: true, description: 'Something'},
-  				{ name: 'Committee3', hidden: true, description: 'Something'},
-  				{ name: 'Committee4', hidden: true, description: 'Something'}
+  committees = [{ name: 'ONGC-Audit & Ethics Committee Meeting', hidden: true, description: '90227'},
+  				{ name: 'ONGC-Board Meeting', hidden: true, description: '90227'},
+          { name: 'ONGC-Stakeholders Relationship Committee Meeting', hidden: true, description: '90227'},
+  				{ name: 'ONGC-Executive Meeting', hidden: true, description: '124990'},
+  				{ name: 'ONGC-Testing Meeting', hidden: true, description: '63948'}
   				]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private actionSheetCtrl: ActionSheetController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -32,6 +29,40 @@ export class CommitteePage {
 
   buttonClicked(selectedIndex){
   	this.committees[selectedIndex].hidden = !this.committees[selectedIndex].hidden;
+  }
+
+  goToCommittee(selectedName){
+    this.navCtrl.push(ViewCommitteePage, {name: selectedName} )
+  }
+
+  presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Choose your action',
+      buttons: [
+        {
+          text: 'Edit Details',
+          role: 'destructive',
+          icon: 'create',
+          handler: () => {
+            console.log('Destructive clicked');
+          }
+        },{
+          text: 'Remove',
+          icon: 'trash',
+          handler: () => {
+            console.log('Archive clicked');
+          }
+        },{
+          text: 'Cancel',
+          role: 'cancel',
+          icon: 'close',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 
 }

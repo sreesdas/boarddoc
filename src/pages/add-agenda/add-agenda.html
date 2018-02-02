@@ -1,0 +1,69 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Add Agenda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Agenda being put upto</ion-label>
+      <ion-select [(ngModel)]="selected">
+        <ion-option *ngFor="let each of committees" value="each.id">{{each.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Agenda Subject</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Agenda Keyword</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Agenda Keyword</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Agenda Is Confidential?</ion-label>
+      <ion-select >
+        <ion-option  value="yes">Yes</ion-option>
+        <ion-option  value="no">No</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Reference to Previous Agenda?</ion-label>
+      <ion-select >
+        <ion-option  value="yes">Yes</ion-option>
+        <ion-option  value="no">No</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Category of Agenda</ion-label>
+      <ion-select >
+        <ion-option  value="CMD">CMD</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Submitted For</ion-label>
+      <ion-select >
+        <ion-option  value="info">Information</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+  <button ion-button block color="primary"> Submit </button>
+
+
+</ion-content>
