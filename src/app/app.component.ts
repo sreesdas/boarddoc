@@ -6,10 +6,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { UsersPage } from '../pages/users/users';
-import { NoticePage } from '../pages/notice/notice';
-import { MomPage } from '../pages/mom/mom';
-import { CircularPage } from '../pages/circular/circular';
+//import { UsersPage } from '../pages/users/users';
+//import { NoticePage } from '../pages/notice/notice';
+//import { MomPage } from '../pages/mom/mom';
+//import { CircularPage } from '../pages/circular/circular';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,10 +25,10 @@ export class MyApp {
     this.pages = [
       { title: 'DashBoard', component: HomePage, icon: 'home' },
       { title: 'Agenda', component: TabsPage, icon: 'calendar'},
-      { title: 'MOM', component: MomPage, icon: 'create'},
-      { title: 'Circular', component: CircularPage, icon: 'document'},
-      { title: 'Notice', component: NoticePage, icon: 'paper'},
-      { title: 'Users', component: UsersPage, icon: 'people'},
+      { title: 'MOM', component: 'MomPage', icon: 'create'},
+      { title: 'Circular', component: 'CircularPage', icon: 'document'},
+      { title: 'Notice', component: 'NoticePage', icon: 'paper'},
+      { title: 'Users', component: 'UsersPage', icon: 'people'},
       { title: 'Logout', component: LoginPage, icon: 'power'}
     ];
 

@@ -8,16 +8,16 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { NoticePage } from '../pages/notice/notice';
-import { MomPage } from '../pages/mom/mom';
-import { CircularPage } from '../pages/circular/circular';
+//import { NoticePage } from '../pages/notice/notice';
+//import { MomPage } from '../pages/mom/mom';
+//import { CircularPage } from '../pages/circular/circular';
+
 
 import { AgendaPage } from '../pages/agenda/agenda';
-import { AddAgendaPage } from '../pages/add-agenda/add-agenda';
 import { CommitteePage } from '../pages/committee/committee';
-import { UsersPage } from '../pages/users/users';
+//import { UsersPage } from '../pages/users/users';
 import { LoginPage } from '../pages/login/login';
-import { ViewCommitteePage } from '../pages/view-committee/view-committee';
+//import { ViewCommitteePage } from '../pages/view-committee/view-committee';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,18 +28,18 @@ import { CommitteeProvider } from '../providers/committee/committee';
   declarations: [
     MyApp,
     AboutPage,
-    AddAgendaPage,
+    //AddAgendaPage,
     AgendaPage,
     CommitteePage,
-    UsersPage,
+    //UsersPage,
     ContactPage,
-    NoticePage,
-    MomPage,
-    CircularPage,
+    //NoticePage,
+    //MomPage,
+    //CircularPage,
     LoginPage,
     HomePage,
     TabsPage,
-    ViewCommitteePage,
+    //ViewCommitteePage,
     ComponentsEventComponent
   ],
   imports: [
@@ -50,18 +50,18 @@ import { CommitteeProvider } from '../providers/committee/committee';
   entryComponents: [
     MyApp,
     AboutPage,
-    AddAgendaPage,
+    //AddAgendaPage,
     AgendaPage,
     CommitteePage,
     LoginPage,
-    UsersPage,
+    //UsersPage,
     ContactPage,
-    NoticePage,
-    MomPage,
-    CircularPage,
+    //NoticePage,
+    //MomPage,
+    //CircularPage,
     HomePage,
     TabsPage,
-    ViewCommitteePage
+    //ViewCommitteePage
   ],
   providers: [
     StatusBar,

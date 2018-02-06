@@ -22,7 +22,7 @@
       <ion-row >
         <ion-col col-11>
           <button ion-item class="item-borderless" (click)="goToCommittee(each.name)">
-            <h3 >{{each.name}}</h3>
+            <h2 >{{each.name}}</h2>
             <p>Committee Owner : {{each.description}}</p>
           </button>
         </ion-col>
@@ -34,11 +34,10 @@
       </ion-row>
     </ion-grid>
 
-
   </ion-list>
 
   <ion-fab right bottom>
-    <button ion-fab color="danger"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab color="danger"> <ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 

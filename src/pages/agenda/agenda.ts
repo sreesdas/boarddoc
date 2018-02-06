@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
-import { AddAgendaPage } from '../add-agenda/add-agenda';
+//import { AddAgendaPage } from '../add-agenda/add-agenda';
 import { CommitteeProvider } from '../../providers/committee/committee';
 
-@IonicPage()
 @Component({
   selector: 'page-agenda',
   templateUrl: 'agenda.html',
@@ -33,7 +32,7 @@ export class AgendaPage {
   }
 
   addAgenda(){
-    this.navCtrl.push(AddAgendaPage, { committee : this.selectedCommittee } );
+    this.navCtrl.push('AddAgendaPage', { committee : this.selectedCommittee } );
   }
 
   presentActionSheet() {

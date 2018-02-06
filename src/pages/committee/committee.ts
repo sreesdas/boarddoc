@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 
-import { ViewCommitteePage } from '../view-committee/view-committee';
+//import { ViewCommitteePage } from '../view-committee/view-committee';
 
-@IonicPage()
+
 @Component({
   selector: 'page-committee',
   templateUrl: 'committee.html',
@@ -32,7 +32,7 @@ export class CommitteePage {
   }
 
   goToCommittee(selectedName){
-    this.navCtrl.push(ViewCommitteePage, {name: selectedName} )
+    this.navCtrl.push('ViewCommitteePage', {name: selectedName} )
   }
 
   presentActionSheet() {
