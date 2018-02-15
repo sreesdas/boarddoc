@@ -16,7 +16,7 @@ export class AddAgendaPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private comPro: CommitteeProvider) {
     this.selectedCommittee = navParams.get('committee');
     this.selected = this.selectedCommittee['id'];
-    this.committees = comPro.getCommitteeList();
+    this.committees = this.comPro.getCommitteeList();
 
   }
 

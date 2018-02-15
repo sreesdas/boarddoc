@@ -1,0 +1,17 @@
+<ion-list *ngFor="let each of selectedCommittee.agendas" no-lines>
+  <ion-grid>
+    <ion-row >
+      <ion-col col-11>
+        <button ion-item class="item-borderless" (click)="openPage()" >
+          <h2>{{each.name}}</h2>
+          <p>Committee proposer : {{each.proposer}}</p>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear icon-only (click)="presentActionSheet()">
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-list>

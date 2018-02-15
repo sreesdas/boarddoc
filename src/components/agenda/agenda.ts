@@ -1,31 +1,33 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ActionSheetController } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
 import { CommitteeProvider } from '../../providers/committee/committee';
-
+import { ActionSheetController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-committee',
-  templateUrl: 'committee.html',
+  selector: 'agenda',
+  templateUrl: 'agenda.html'
 })
-export class CommitteePage {
+export class AgendaComponent {
 
-  committees : any;
+  @Input('committee') committeeId: any;
 
-  constructor(public navCtrl: NavController, private actionSheetCtrl: ActionSheetController, private comPro : CommitteeProvider) {
+  selectedCommittee: any;
+  committees: any;
+
+  constructor(private comPro: CommitteeProvider, private navCtrl: NavController, private actionSheetCtrl: ActionSheetController) {
     this.committees = comPro.getCommitteeList();
+    this.selectedCommittee = {id:0, agendas:[], proposer:''};
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CommitteePage');
+  openPage() {
+    this.navCtrl.push('AgendaPage');
   }
 
-  buttonClicked(selectedIndex){
-  	this.committees[selectedIndex].hidden = !this.committees[selectedIndex].hidden;
-  }
-
-  goToCommittee(selectedName){
-    this.navCtrl.push('ViewCommitteePage', {name: selectedName} )
+  ngOnChanges(){
+    if(this.committeeId > -1){
+      this.selectedCommittee = this.committees[this.committeeId];
+      console.log(this.selectedCommittee);
+    }
   }
 
   presentActionSheet() {

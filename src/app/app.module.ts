@@ -12,8 +12,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 //import { MomPage } from '../pages/mom/mom';
 //import { CircularPage } from '../pages/circular/circular';
 
-
-import { AgendaPage } from '../pages/agenda/agenda';
+import { AgendaHomePage } from '../pages/agenda-home/agenda-home';
+import { AgendaComponent } from '../components/agenda/agenda';
+import { AgendaVolComponent } from '../components/agenda-vol/agenda-vol';
 import { CommitteePage } from '../pages/committee/committee';
 //import { UsersPage } from '../pages/users/users';
 import { LoginPage } from '../pages/login/login';
@@ -28,8 +29,11 @@ import { CommitteeProvider } from '../providers/committee/committee';
   declarations: [
     MyApp,
     AboutPage,
+    AgendaHomePage,
+    AgendaComponent,
+    AgendaVolComponent,
     //AddAgendaPage,
-    AgendaPage,
+    //AgendaPage,
     CommitteePage,
     //UsersPage,
     ContactPage,
@@ -50,8 +54,9 @@ import { CommitteeProvider } from '../providers/committee/committee';
   entryComponents: [
     MyApp,
     AboutPage,
+    AgendaHomePage,
     //AddAgendaPage,
-    AgendaPage,
+    //AgendaPage,
     CommitteePage,
     LoginPage,
     //UsersPage,

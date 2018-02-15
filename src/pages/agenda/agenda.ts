@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ActionSheetController } from 'ionic-angular';
 //import { AddAgendaPage } from '../add-agenda/add-agenda';
 import { CommitteeProvider } from '../../providers/committee/committee';
 
+@IonicPage()
 @Component({
   selector: 'page-agenda',
   templateUrl: 'agenda.html',
@@ -14,7 +15,7 @@ export class AgendaPage {
   };
   committee = -1;
   selectedCommittee: any;
-  committees: Array<{id: number, name: string, agendas: Array<{id: number, name: string, proposer: string}>}>;
+  committees: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private comPro: CommitteeProvider, private actionSheetCtrl: ActionSheetController) {
     this.selectedCommittee = {id: 0, name: '', agendas: [], proposer: ''};
